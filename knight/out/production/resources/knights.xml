@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--在SpEL中, 使用T()运算符会调用类作用域的方法和常量. 例如, 在SpEL中使用Java的Math类, 我们可以像下面的示例这样使用T()运算符：T(java.lang.Math) T()运算符的结果会返回一个java.lang.Math类对象.-->
+    <bean id="quest" class="com.juzix.knight.service.impl.SlayDragonQuest">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+    <bean id="knight" class="com.juzix.knight.service.impl.BraveKnight">
+        <constructor-arg ref="quest"/>
+    </bean>
+</beans>
