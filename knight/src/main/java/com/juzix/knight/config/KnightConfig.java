@@ -18,4 +18,6 @@ public class KnightConfig {
     public Quest quest() {
         return new SlayDragonQuest(System.out);
     }
+
+
 }
